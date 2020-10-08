@@ -1,0 +1,413 @@
+@import "variables"
+
+
+//стили табов
+
+.personal-tabs
+    margin-bottom: 22px
+    &__main
+        margin-left: 16px
+        margin-bottom: 11px
+        display: flex
+    &__content
+        max-width: 320px
+    &__tab
+        color: #A7A7A7
+        font-size: 16px
+        line-height: 22px
+        font-family: 'OpenSans-SemiBold', 'Arial Narrow', Arial, sans-serif
+        cursor: pointer
+        transition: all 0.3s ease-in-out
+        &:first-child
+            margin-right: 53px
+        &.active
+            color: #65A1D8
+    &__line
+        background-color: #DBDBDB
+        height: 2px
+        position: relative
+        transition: all 0.2s
+        span
+            position: absolute
+            left: 0
+            top: 0px
+            width: 55%
+            height: 2px
+            background-color:  #65A1D8
+            transition: all 0.3 ease-in-out
+
+
+//стили списка заказов
+    
+.orders-list
+    max-width: 660px
+    margin-top: 42px
+    &__body
+        border-left: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+        background-color: #ffffff
+    &__row
+        height: 47px
+        display: flex
+        border-bottom: 1px solid #E1E1E1;
+    &__elem
+        display: flex
+        flex: 1 0 33%
+        justify-content: center
+        align-items: center
+        color: #1B1B1B
+        font-size: 12px
+        line-height: 16px
+        text-align: center
+        border-left: 1px solid #E1E1E1;
+        &:first-child
+            border-color: transparent
+        a
+            color: #65A1D8
+
+
+.orders-list-head
+    display: flex
+    align-items: center
+    height: 58px
+    background-color: #65A1D8
+    &__elem
+        font-family: 'OpenSans-SemiBold', 'Arial Narrow', Arial, sans-serif
+        color: #ffffff
+        height: 28px
+        border-right: 1px solid rgba(255, 255, 255, 0.17);
+        font-size: 12px
+        line-height: 16px
+        display: flex
+        flex: 1 0 33%
+        justify-content: center
+        align-items: center
+        &:last-child
+            border-color: transparent
+
+
+//стили страницы заказов
+
+.order-show
+    &__wrap
+        padding: 60px 15px 100px
+        max-width: 990px
+        width: 100%
+        margin: 0 auto
+    &__back
+        flex: 1 0 100%
+        display: flex
+        font-family: 'OpenSans-SemiBold', 'Arial Narrow', Arial, sans-serif
+        font-size: 14px;
+        line-height: 19px;
+        color: #65A1D8
+        margin-bottom: 35px
+        a:hover
+            text-decoration: none
+            color: darken(#65A1D8, 10)
+        i 
+            margin-right: 8px
+    &__head-main
+        display: flex
+        justify-content: space-between
+        margin-bottom: 30px
+        @media screen and ( max-width:  650px)
+            flex-direction: column
+    &__title
+        font-size: 28px;
+        line-height: 38px;
+        font-family: 'OpenSans-SemiBold', 'Arial Narrow', Arial, sans-serif
+    &__btn-print
+        border: none
+        background-color: #AA404A
+        height: 37px
+        max-width: 227px
+        width: 100%
+        font-size: 14px;
+        line-height: 19px;
+        color: #ffffff
+        text-align: center
+        appearance: none
+        box-shadow: none
+        outline: none
+        transition: all 0.2s
+        &:hover
+            background-color: lighten(#AA404A, 5)
+        i
+            margin-left: 12px
+
+//стили таблицы позиций заказа
+
+.order-items-table
+    max-width: 960px
+    &__head
+        display: flex
+        align-items: center
+        height: 58px
+        background-color: #65A1D8
+        @media screen and ( max-width:  830px)
+            display: none
+    &__head-elem
+        font-family: 'OpenSans-SemiBold', 'Arial Narrow', Arial, sans-serif
+        color: #ffffff
+        height: 28px
+        border-right: 1px solid rgba(255, 255, 255, 0.17);
+        font-size: 12px
+        line-height: 16px
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        &--1
+            max-width: 36px
+        &--2
+            max-width: 81px
+        &--3
+            max-width: 141px
+        &--4
+            max-width: 323px
+        &--5
+            max-width: 50px
+        &--6
+            max-width: 102px
+        &--7
+            max-width: 120px
+        &--8
+            max-width: 110px
+        &:last-child
+            border-color: transparent
+    &__body
+        border-left: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+        background-color: #ffffff
+    &__row
+        min-height: 61px
+        display: flex
+        border-bottom: 1px solid #E1E1E1;
+        @media screen and ( max-width:  830px)
+            flex-direction: column
+            border-color: darken(#E1E1E1, 10)
+            &--mobile-col-2
+                display: flex
+                flex-direction: row
+                border-color: transparent
+                .order-items-table__body-elem
+                    display: flex
+                    align-items: center
+                    padding-left: 12px
+                    width: 50%
+                    &--7
+                        border-left: none
+                    &:first-child
+                        border-color: transparent
+                    &--1, &--2, &--3, &--4, &--5, &--6
+                        display: none
+    &__delivery
+        display: flex
+        align-items: center
+        min-height: 61px
+        height: 100%
+        border-bottom: 1px solid #E1E1E1;
+        @media screen and ( max-width:  830px)
+            .order-items-table__body-elem
+                height: 61px
+                border: none
+                display: flex
+                align-items: center
+                width: 49.8%
+                font
+                    padding-left: 12px
+                    border-bottom: none
+    &__mobile-title
+        display: none
+        @media screen and ( max-width:  830px)
+            display: block
+            width: 150px
+            background-color:  #65A1D8
+            color: white
+            min-height: 61px
+            margin-right: 12px
+            padding-left: 12px !important
+        @media screen and ( max-width:  500px)
+            width: 110px
+            word-break: break-all
+    &__delivery-title
+        display: flex
+        align-items: center
+        padding-left: 48px
+        max-width: 849px
+        width: 100%
+        height: 61px
+        font-size: 12px;
+        line-height: 16px;
+        font-family: 'OpenSans-SemiBold', 'Arial Narrow', Arial, sans-serif
+        @media screen and ( max-width:  830px)
+            padding: 0 12px
+            border-right: 1px solid #E1E1E1;
+            width: 50.2%
+    &__body-elem
+        color: #1B1B1B
+        font-size: 12px
+        line-height: 16px
+        padding: 22px 14px
+        box-sizing: border-box
+        text-align: center
+        border-left: 1px solid #E1E1E1;
+        width: 100%
+        @media screen and ( max-width:  830px)
+            border-bottom: 1px solid #E1E1E1;
+        @media screen and ( max-width:  830px)
+            display: flex
+            padding: 0 14px 0 0
+        &:first-child
+            border-color: transparent
+            @media screen and ( max-width:  830px)
+                border-bottom: 1px solid #E1E1E1;
+        &--1
+            max-width: 35px
+            @media screen and ( max-width:  830px)
+                max-width: 960px
+        &--2
+            max-width: 80px
+            @media screen and ( max-width:  830px)
+                max-width: 960px
+        &--3
+            max-width: 140px
+            @media screen and ( max-width:  830px)
+                max-width: 960px
+        &--4
+            max-width: 323px
+            text-align: left
+            @media screen and ( max-width:  830px)
+                max-width: 960px
+                span
+                    max-width: 300px
+            @media screen and ( max-width:  540px)
+                span
+                    max-width: 250px
+            @media screen and ( max-width: 460px)
+                span
+                    max-width: 200px
+            @media screen and ( max-width: 420px)
+                span
+                    max-width: 170px
+            @media screen and ( max-width: 360px)
+                span
+                    max-width: 140px
+        &--5
+            max-width: 50px
+            @media screen and ( max-width:  830px)
+                max-width: 960px
+        &--6
+            max-width: 102px
+            @media screen and ( max-width:  830px)
+                max-width: 960px
+        &--7
+            max-width: 120px
+            @media screen and ( max-width:  830px)
+                max-width: 960px
+        &--8
+            max-width: 110px
+            @media screen and ( max-width:  830px)
+                max-width: 960px
+        &--red
+            color:#AA404A
+        &--semi-bolder
+            font-family: 'OpenSans-SemiBold', 'Arial Narrow', Arial, sans-serif
+        &--blue
+            color: #65A1D8
+            font-family: 'OpenSans-Bold', 'Arial Narrow', Arial, sans-serif
+        &--bolder
+            font-family: 'OpenSans-Bold', 'Arial Narrow', Arial, sans-serif0px
+            width: 100%
+        @media screen and ( max-width:  830px)
+            text-align: left;
+            span
+                padding: 22px 0
+
+//стили описания заказа
+    
+.order-show-desc
+    width: 100%
+    border: 1px solid #E1E1E1;
+    margin-top: 10px
+    &__row
+        display: flex
+        padding: 22px 0px
+        border-bottom: 1px solid #EAEAEA
+        &:last-child
+            border-color: transparent
+        @media screen and ( max-width:  600px)
+            flex-direction: column
+            padding-right: 22px
+    &__title
+        font-size: 12px
+        line-height: 16px
+        font-family: 'OpenSans-SemiBold', 'Arial Narrow', Arial, sans-serif
+        color: #353A85
+        padding-left: 35px
+        box-sizing: border-box
+        flex: 0 0 220px
+        @media screen and ( max-width:  600px)
+           flex: 0 0 auto
+           margin-bottom: 20px
+           padding-left: 12px
+    &__delivery-title
+        font-size: 14px;
+        line-height: 19px;
+        &--blue
+            color: #65A1D8
+    &__small
+            font-size: 10px;
+            line-height: 14px;
+            color: #8D8E97
+            display: block
+            margin-top: 5px
+    &__content
+        @media screen and ( max-width:  600px)
+           padding-left: 12px
+        p
+            font-size: 12px;
+            line-height: 16px;
+            color: #8D8E97
+            max-width: 671px
+        h3
+            font-size: 12px;
+            line-height: 16px;
+            color: #464646
+            font-family: 'OpenSans-Bold', 'Arial Narrow', Arial, sans-serif
+
+
+
+// печатная версия
+
+.head-print
+    margin-top: 92px
+    margin-bottom: 80px
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    @media screen and ( max-width:  600px)
+        flex-direction: column
+    img
+        object-fit: contain
+        height: 157px
+        @media screen and ( max-width:  600px)
+            margin-bottom: 40px
+    &__title
+        font-size: 18px
+        line-height: 25px
+        color: #3A468C
+        margin-bottom: 20px
+        font-family: 'OpenSans-SemiBold', 'Arial Narrow', Arial, sans-serif
+    &__contacts
+        font-size: 14px
+        line-height: 19px
+        color: #333333
+        margin: 0
+        margin-bottom: 15px
+    &__requisite
+        font-size: 12px;
+        line-height: 16px;
+        color: #000000
+        margin: 0
