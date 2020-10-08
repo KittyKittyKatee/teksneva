@@ -15,8 +15,6 @@ gulp.task('sass', function() {
   return gulp.src('src/sass/main.sass')
   .pipe(sass())
   .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-  .pipe(cleanCSS())
-  .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('src/css'))
   .pipe(browserSync.reload({stream: true}));
 });
@@ -24,9 +22,7 @@ gulp.task('sass', function() {
 gulp.task('minify-css', function() {
   return gulp.src([])
   .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-  .pipe(cleanCSS())
   .pipe(concat('main-prod.css'))
-  .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('src/css'));
 });
 
